@@ -48,7 +48,7 @@
         function test_replace_word_partially() {
             //arrange
             $test_FindAndReplace = new FindAndReplace();
-            $inputString = "this is habitual";
+            $inputString = "habitual";
             $wordToReplace = "habit";
             $replacementWord = "routine";
 
@@ -56,7 +56,7 @@
             $result = $test_FindAndReplace->replaceWord($inputString, $wordToReplace, $replacementWord);
 
             //assert
-             $this->assertEquals("this is routineual", $result);
+             $this->assertEquals("routineual", $result);
         }
     }
 ?>
