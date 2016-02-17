@@ -1,13 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="/../web/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="/../web/css/bootstrap-theme.min.css" type="text/css">
-    <link rel="stylesheet" href="/../web/css/styles.css" type="text/css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/styles.css" type="text/css">
     <meta charset="utf-8">
     <title>Find and Replace</title>
 </head>
 <body>
+    <div class="container">
+        <h1>Find And Replace!</h1>
+        <form action="/results">
+            <div class="form-group">
+                <label for="input_string">Enter your sentence/phrase:</label>
+                <input type="text" name="input_string">
+            </div>
+            <div class="form-group">
+                <label for="word_to_replace">Enter a word from above to replace:</label>
+                <input type="text" name="word_to_replace">
+            </div>
+            <div class="form-group">
+                <label for="replacement_word">Enter a replacement word:</label>
+                <input type="text" name="replacement_word">
+            </div>
+            <button type="submit" class="btn btn-success">Replace your word!</button>
+        </form>
+        <h3>Here are your inputs:</h3>
+        <p>Your original sentence/phrase: {{ originalinput.inputString }}</p>
+        <p>Your word that was replaced: {{ originalinput.wordToReplace }}</p>
+        <p>Your word that replaced the other: {{ originalinput.replacementWord }}</p>
 
+        <h3>Here is your replaced sentence:</h3>
+        <p>{{ newresult }}</p>
+    </div>
 </body>
 </html>
