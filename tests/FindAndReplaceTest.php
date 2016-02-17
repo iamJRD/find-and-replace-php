@@ -31,7 +31,7 @@
              $this->assertEquals("the dog is bad", $result);
         }
 
-        function test_replace_word_sentence_multipule() {
+        function test_replace_word_sentence_multiple() {
             //arrange
             $test_FindAndReplace = new FindAndReplace();
             $inputString = "that cat is my cat";
@@ -45,15 +45,18 @@
              $this->assertEquals("that dog is my dog", $result);
         }
 
+        function test_replace_word_partially() {
+            //arrange
+            $test_FindAndReplace = new FindAndReplace();
+            $inputString = "this is habitual";
+            $wordToReplace = "habit";
+            $replacementWord = "routine";
+
+            //act
+            $result = $test_FindAndReplace->replaceWord($inputString, $wordToReplace, $replacementWord);
+
+            //assert
+             $this->assertEquals("this is routineual", $result);
+        }
     }
 ?>
-
-
-
-<!-- replace cat with dog in sentence
-input "the cat is bad"
-output "the dog is bad"
-
-replace duplicated word in sentence
-input "that cat is my cat"
-output "the dog is my dog" -->

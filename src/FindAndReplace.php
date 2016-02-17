@@ -13,9 +13,21 @@
             }
 
             $newString = implode(" ", $stringArray);
-            return $newString;
+
+            $pos = strpos($newString, $wordToReplace);
+
+            if ($pos === true)
+            {
+                $wordLength = strlen($wordToReplace);
+                $finalString = substr_replace($newString, $replacementWord, $pos, $wordLength);
+
+                return $finalString;
+            } else {
+                return $newString;
+            }
         }
-
-
     }
 ?>
+
+
+$
