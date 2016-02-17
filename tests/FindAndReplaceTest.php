@@ -31,6 +31,20 @@
              $this->assertEquals("the dog is bad", $result);
         }
 
+        function test_replace_word_sentence_multipule() {
+            //arrange
+            $test_FindAndReplace = new FindAndReplace();
+            $inputString = "that cat is my cat";
+            $wordToReplace = "cat";
+            $replacementWord = "dog";
+
+            //act
+            $result = $test_FindAndReplace->replaceWord($inputString, $wordToReplace, $replacementWord);
+
+            //assert
+             $this->assertEquals("that dog is my dog", $result);
+        }
+
     }
 ?>
 
