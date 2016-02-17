@@ -17,16 +17,26 @@
              $this->assertEquals("dog", $result);
         }
 
+        function test_replace_word_sentence() {
+            //arrange
+            $test_FindAndReplace = new FindAndReplace();
+            $inputString = "the cat is bad";
+            $wordToReplace = "cat";
+            $replacementWord = "dog";
+
+            //act
+            $result = $test_FindAndReplace->replaceWord($inputString, $wordToReplace, $replacementWord);
+
+            //assert
+             $this->assertEquals("the dog is bad", $result);
+        }
+
     }
 ?>
 
 
 
-<!-- replace cat with dog
-input "cat"
-output "dog"
-
-replace cat with dog in sentence
+<!-- replace cat with dog in sentence
 input "the cat is bad"
 output "the dog is bad"
 
