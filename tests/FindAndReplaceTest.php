@@ -3,6 +3,33 @@
 
     class FindAndReplaceTest extends PHPUnit_Framework_TestCase {
 
+        function test_replace_word_single() {
+            //arrange
+            $test_FindAndReplace = new FindAndReplace();
+            $inputString = "cat";
+            $wordToReplace = "cat";
+            $replacementWord = "dog";
+
+            //act
+            $result = $test_FindAndReplace->replaceWord($inputString, $wordToReplace, $replacementWord);
+
+            //assert
+             $this->assertEquals("dog", $result);
+        }
 
     }
 ?>
+
+
+
+<!-- replace cat with dog
+input "cat"
+output "dog"
+
+replace cat with dog in sentence
+input "the cat is bad"
+output "the dog is bad"
+
+replace duplicated word in sentence
+input "that cat is my cat"
+output "the dog is my dog" -->
